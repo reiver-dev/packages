@@ -10,20 +10,28 @@ COMMON_OPTS="\
 --with-gif \
 --with-rsvg \
 --with-modules \
---with-cairo=yes"
+--with-cairo  \
+--with-dbus=no \
+--with-gconf=no \
+--with-gsettings=no"
 
 
 if [ "$(uname)" == "Darwin" ]
 then
+
     SYSTEM_OPTS="${COMMON_OPTS}"
     # The build has a hard time finding libtinfo, which is separated from
     # libncurses. See
     # https://github.com/conda-forge/emacs-feedstock/pull/16#issuecomment-334241528
     export LDFLAGS="${LDFLAGS} -ltinfo"
+
 else
-    SYSTEM_OPTS="--with-x-toolkit=lucid  \
---x-includes=$PREFIX/include  \
+
+    SYSTEM_OPTS="\
+--with-x-toolkit=lucid \
+--x-includes=$PREFIX/include \
 --x-libraries=$PREFIX/lib"
+
 fi
 
 ./autogen.sh

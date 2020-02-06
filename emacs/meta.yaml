@@ -17,8 +17,9 @@ requirements:
     - pkg-config
     - {{ compiler('c') }}
   host:
-    - libxml2
+    - gmp
     - ncurses
+    - libxml2
     - dbus  # [osx]
     - jpeg
     - libpng
@@ -26,14 +27,17 @@ requirements:
     - librsvg
     - giflib
     - gnutls
-    - freetype # [linux]
-    - xorg-libxaw # [linux]
-    - xorg-libxpm # [linux]
+    - cairo
+    - jansson
+    - freetype  # [linux]
+    - xorg-libxaw  # [linux]
+    - xorg-libxpm  # [linux]
     - zlib
 
   run:
-    - libxml2
+    - gmp
     - ncurses
+    - libxml2
     - dbus  # [osx]
     - jpeg
     - libpng
@@ -41,11 +45,11 @@ requirements:
     - librsvg
     - giflib
     - gnutls
-    - freetype        # [linux]
+    - cairo
+    - jansson
+    - freetype  # [linux]
     - xorg-libxaw  # [linux]
     - xorg-libxpm  # [linux]
-    - xorg-libxfixes  # [linux]
-    - xorg-libxft  # [linux]
     - zlib
 
 test:
