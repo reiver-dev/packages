@@ -16,6 +16,7 @@ requirements:
   build:
     - pkg-config
     - {{ compiler('c') }}
+    - texinfo
   host:
     - gmp
     - ncurses
