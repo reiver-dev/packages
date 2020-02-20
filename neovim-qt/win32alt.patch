@@ -1,0 +1,20 @@
+diff --git a/src/gui/input_win32.cpp b/src/gui/input_win32.cpp
+index ec1a716..1c90e20 100644
+--- a/src/gui/input_win32.cpp
++++ b/src/gui/input_win32.cpp
+@@ -26,13 +26,13 @@ Qt::Key Key_Cmd() noexcept
+ QString GetModifierPrefix(Qt::KeyboardModifiers mod) noexcept
+ {
+ 	QString modprefix;
+-	if (mod & ControlModifier() && !(mod & Qt::AltModifier)) {
++	if (mod & ControlModifier()) {
+ 		modprefix += "C-";
+ 	}
+ 	if ( mod & Qt::ShiftModifier ) {
+ 		modprefix += "S-";
+ 	}
+-	if (mod & Qt::AltModifier && !(mod & ControlModifier())) {
++	if (mod & Qt::AltModifier) {
+ 		modprefix += "A-";
+ 	}
+ 
